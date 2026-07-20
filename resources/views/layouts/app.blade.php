@@ -5,12 +5,11 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{ $title }}</title>
+    <title>
+        {{ $title }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="" name="author">
-
-    {{ asset('niceadmin') }}
     <!-- Favicons -->
     <link href="{{ asset('niceadmin/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('niceadmin/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -165,7 +164,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('user.index') }}">
-                    <i class='bx bx-user-pin'></i>
+                    <i class='bx bx-user'></i>
                     <span>User</span>
                 </a>
             </li>
@@ -217,12 +216,10 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
-    @stack('modals')
-
     <!-- add on -->
     <script src="{{ asset('niceadmin/vendor/jquery/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('niceadmin/vendor/parsley/parsley.min.js') }}"></script>
-    <script src="{{ asset('niceadmin/vendor/sweetalert2/sweetalert2@11') }}"></script>
+    <script src="{{ asset('niceadmin/vendor/sweetalert2/sweetalert2@11') }}""></script>
     <script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.js') }}"></script>
     <script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.bootstrap5.js') }}"></script>
 
@@ -236,11 +233,7 @@
     <script src="{{ asset('niceadmin/js/main.js') }}"></script>
 
     <script>
-        new DataTable('#data-table', {
-            pageLength: 5,
-            lengthMenu: [5, 10, 25, 50, 100]
-        });
-
+        new DataTable('#data-table');
         $('.form').parsley({
             errorClass: 'is-invalid text-red',
             successClass: 'is-valid',
@@ -262,8 +255,6 @@
             width: "100%",
         })
     </script>
-
-    @stack('scripts')
 
 </body>
 
